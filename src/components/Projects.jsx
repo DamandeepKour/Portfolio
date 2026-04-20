@@ -27,18 +27,22 @@ const projects = [
     title: 'EV Rickshaw Platform',
     desc: 'Fleet rental management with subscription model, real-time GPS tracking, analytics dashboard, payment processing, and separate owner/driver mobile-friendly portals.',
     tech: ['React','Node.js','MongoDB','Razorpay','Maps API'],
-    metrics: [{ val: '200+', key: 'Vehicles' }, { val: '3x', key: 'Revenue growth' }, { val: '4mo', key: 'MVP delivery' }],
+    metrics: [{ val: '100+', key: 'Vehicles' }, { val: '3x', key: 'Revenue growth' }, { val: '4mo', key: 'MVP delivery' }],
   },
   {
-    icon: '🔐',
+    icon: '💳',
     bg: 'linear-gradient(135deg, #0a1520, #0d2030)',
-    badge: 'Open Source',
-    badgeClass: 'bg-[rgba(239,159,39,0.2)] text-[#ef9f27] border border-[rgba(239,159,39,0.3)]',
-    title: 'Auth Microservice Boilerplate',
-    desc: 'Production-ready authentication microservice with JWT rotation, OAuth2, refresh token management, rate limiting, and Docker-ready deployment. Used as a starter for 4 projects.',
-    tech: ['Node.js','Redis','PostgreSQL','Docker','JWT'],
-    metrics: [{ val: '4', key: 'Projects using it' }, { val: '<50ms', key: 'Auth response' }, { val: '0', key: 'Breaches' }],
-  },
+    badge: 'Fintech System',
+    badgeClass: 'bg-[rgba(93,202,165,0.2)] text-[#5dcaa5] border border-[rgba(93,202,165,0.3)]',
+    title: 'Cross-Border Deposit Management System',
+    desc: 'Built a secure admin platform to manage cross-border bank transactions across Europe, Australia, and Asia using Yapily (Open Banking) APIs. Implemented bank authentication flows, real-time transaction tracking, and automated reconciliation, significantly reducing manual processing effort and improving financial visibility.',
+    tech: ['Node.js','Express.js','MySQL','Yapily API','JWT','REST APIs'],
+    metrics: [
+      { val: '1000+', key: 'Daily transactions tracked' },
+      { val: '30%', key: 'Manual effort reduced' },
+      { val: 'Multi-region', key: 'EU, AU, APAC support' }
+    ],
+  }
 ];
 
 export default function Projects() {

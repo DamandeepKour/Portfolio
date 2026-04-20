@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#080810] border-t border-white/[0.07] px-8 py-6 flex items-center justify-between flex-wrap gap-4">
       <div className="text-[13px] text-[#8888a0]">
-        © 2024 Damandeep Kour · Built with React & Framer Motion
+        © 2024 Damandeep Kour
       </div>
       <div className="flex gap-5">
         <button
@@ -11,9 +11,9 @@ export default function Footer() {
         >
           Back to top ↑
         </button>
-        <a href="#" className="text-[13px] text-[#8888a0] hover:text-[#f0f0f5] transition-colors no-underline">
+        {/* <a href="#" className="text-[13px] text-[#8888a0] hover:text-[#f0f0f5] transition-colors no-underline">
           Download CV
-        </a>
+        </a> */}
       </div>
     </footer>
   );

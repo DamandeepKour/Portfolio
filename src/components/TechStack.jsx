@@ -4,14 +4,14 @@ const stacks = [
     iconBg: 'rgba(127,119,221,0.12)',
     iconColor: '#afa9ec',
     title: 'Frontend',
-    items: ['React.js','Redux Toolkit','Tailwind CSS','JavaScript ES6+','TypeScript','Framer Motion'],
+    items: ['React.js','Redux Toolkit','Tailwind CSS','JavaScript ES6+'],
   },
   {
     icon: '⚡',
     iconBg: 'rgba(93,202,165,0.12)',
     iconColor: '#5dcaa5',
     title: 'Backend',
-    items: ['Node.js','Express.js','Go (Golang)','REST APIs','GraphQL','Microservices'],
+    items: ['Node.js','Express.js','Go (Golang)','REST APIs','Microservices'],
   },
   {
     icon: '🗄',
@@ -25,7 +25,7 @@ const stacks = [
     iconBg: 'rgba(212,83,126,0.12)',
     iconColor: '#d4537e',
     title: 'DevOps & Cloud',
-    items: ['Docker','AWS EC2/S3','CI/CD','GitHub Actions','Nginx','PM2'],
+    items: ['Docker','AWS EC2/S3','CI/CD','GitHub Actions'],
   },
 ];
 
