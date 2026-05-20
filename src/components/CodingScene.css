@@ -1,0 +1,205 @@
+/* Motion-graphics style animations (Jitter / website promo inspired) */
+
+.coding-scene {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1 / 1;
+}
+
+.coding-scene__glow {
+  position: absolute;
+  inset: 10%;
+  background: radial-gradient(
+    ellipse at 50% 60%,
+    rgba(127, 119, 221, 0.35) 0%,
+    rgba(93, 202, 165, 0.12) 40%,
+    transparent 70%
+  );
+  animation: scene-glow-pulse 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.coding-scene__float {
+  animation: scene-float 5s ease-in-out infinite;
+}
+
+.coding-scene__float--delay {
+  animation-delay: -2.5s;
+}
+
+.coding-scene__code-line {
+  opacity: 0;
+  transform: translateX(-8px);
+  animation: code-line-in 0.5s ease forwards;
+}
+
+.coding-scene__code-line:nth-child(1) { animation-delay: 0.4s; }
+.coding-scene__code-line:nth-child(2) { animation-delay: 0.9s; }
+.coding-scene__code-line:nth-child(3) { animation-delay: 1.4s; }
+.coding-scene__code-line:nth-child(4) { animation-delay: 1.9s; }
+.coding-scene__code-line:nth-child(5) { animation-delay: 2.4s; }
+
+.coding-scene__cursor {
+  animation: cursor-blink 1s step-end infinite;
+}
+
+.coding-scene__hand {
+  transform-origin: 70% 80%;
+  animation: hand-type 2.2s ease-in-out infinite;
+}
+
+.coding-scene__orbit {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(127, 119, 221, 0.25);
+  animation: orbit-spin 20s linear infinite;
+  pointer-events: none;
+}
+
+.coding-scene__orbit--inner {
+  inset: 8%;
+  animation-duration: 14s;
+  animation-direction: reverse;
+}
+
+.coding-scene__orbit--outer {
+  inset: -4%;
+}
+
+.coding-scene__badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-family: ui-monospace, 'Cascadia Code', 'Fira Code', monospace;
+  color: #afa9ec;
+  background: rgba(20, 20, 31, 0.92);
+  border: 1px solid rgba(127, 119, 221, 0.35);
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  white-space: nowrap;
+}
+
+.coding-scene__badge--tl {
+  top: 4%;
+  left: 0;
+  animation: badge-float 4s ease-in-out infinite;
+}
+
+.coding-scene__badge--br {
+  bottom: 8%;
+  right: -4%;
+  animation: badge-float 4s ease-in-out infinite 1.2s;
+}
+
+.coding-scene__badge--tr {
+  top: 18%;
+  right: -8%;
+  animation: badge-float 5s ease-in-out infinite 0.6s;
+}
+
+.coding-scene__badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #5dcaa5;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes scene-glow-pulse {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes scene-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes code-line-in {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes hand-type {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-4deg); }
+  75% { transform: rotate(2deg); }
+}
+
+@keyframes orbit-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes badge-float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-6px) translateX(3px); }
+}
+
+/* Floating motion-graphic symbols */
+.motion-symbol {
+  position: absolute;
+  font-family: ui-monospace, monospace;
+  font-weight: 600;
+  pointer-events: none;
+  opacity: 0.5;
+  animation: symbol-drift 8s ease-in-out infinite;
+}
+
+.motion-symbol--1 {
+  top: 12%;
+  right: 8%;
+  color: #7f77dd;
+  font-size: 22px;
+  animation-delay: 0s;
+}
+
+.motion-symbol--2 {
+  bottom: 22%;
+  left: 2%;
+  color: #5dcaa5;
+  font-size: 18px;
+  animation-delay: -2s;
+}
+
+.motion-symbol--3 {
+  top: 42%;
+  left: -2%;
+  color: #ef9f27;
+  font-size: 14px;
+  animation-delay: -4s;
+}
+
+@keyframes symbol-drift {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate(6px, -12px) rotate(8deg);
+    opacity: 0.65;
+  }
+}
+
+/* Scroll reveal */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

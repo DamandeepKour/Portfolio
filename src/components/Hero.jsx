@@ -1,13 +1,19 @@
 import Orb from '../Orb';
+import CodingScene from './CodingScene';
+import FloatingMotion from './FloatingMotion';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
 export default function Hero() {
+  const heroVisualRef = useScrollReveal({ threshold: 0.2 });
+
   return (
     <section
       id="hero"
-      className="min-h-[92vh] flex flex-col lg:flex-row items-center justify-center gap-12 px-6 py-16 max-w-6xl mx-auto"
+      className="relative min-h-[92vh] flex flex-col lg:flex-row items-center justify-center gap-12 px-6 py-16 max-w-6xl mx-auto"
     >
+      <FloatingMotion />
       {/* Text side */}
       <div className="flex-1 text-center lg:text-left">
         <div className="inline-flex items-center gap-1.5 bg-[rgba(127,119,221,0.12)] border border-[rgba(127,119,221,0.3)] text-[#afa9ec] text-xs px-3.5 py-1 rounded-full mb-6">
@@ -51,15 +57,23 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Orb side */}
-      <div className="flex-shrink-0 w-[280px] h-[280px] lg:w-[360px] lg:h-[360px]">
-        <Orb
-          hoverIntensity={2}
-          rotateOnHover
-          hue={0}
-          forceHoverState={false}
-          backgroundColor="#080810"
-        />
+      {/* Motion graphics: developer + orb */}
+      <div
+        ref={heroVisualRef}
+        className="reveal-on-scroll relative flex-shrink-0 w-full max-w-[420px] lg:max-w-[480px]"
+      >
+        <div className="absolute inset-0 flex items-center justify-center opacity-40 pointer-events-none">
+          <div className="w-[220px] h-[220px] lg:w-[280px] lg:h-[280px]">
+            <Orb
+              hoverIntensity={2}
+              rotateOnHover
+              hue={0}
+              forceHoverState={false}
+              backgroundColor="#080810"
+            />
+          </div>
+        </div>
+        <CodingScene />
       </div>
     </section>
   );

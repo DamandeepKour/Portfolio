@@ -1,3 +1,5 @@
+import { useScrollReveal } from '../hooks/useScrollReveal';
+
 const stats = [
   { num: '3', suffix: '+', label: 'Years Experience' },
   { num: '12', suffix: '+', label: 'Projects Shipped' },
@@ -6,8 +8,13 @@ const stats = [
 ];
 
 export default function Stats() {
+  const statsRef = useScrollReveal({ threshold: 0.3 });
+
   return (
-    <div className="flex justify-center border-y border-white/[0.07] bg-[#0d0d1a]">
+    <div
+      ref={statsRef}
+      className="reveal-on-scroll flex justify-center border-y border-white/[0.07] bg-[#0d0d1a]"
+    >
       {stats.map((s, i) => (
         <div
           key={i}

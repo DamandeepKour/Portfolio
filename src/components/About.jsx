@@ -1,6 +1,10 @@
 import { damandeepImg } from '../assets/damandeepImg';
+import CodingScene from './CodingScene';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function About() {
+  const aboutVisualRef = useScrollReveal();
+
   return (
     <section id="about" className="py-20 px-6 max-w-6xl mx-auto">
       <div className="text-center mb-14">
@@ -9,9 +13,10 @@ export default function About() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* Avatar */}
-        <div className="flex justify-center">
-          <div className="relative w-[240px] h-[240px]">
+        {/* Avatar + mini coding animation */}
+        <div ref={aboutVisualRef} className="reveal-on-scroll flex flex-col items-center gap-8">
+          <div className="flex justify-center">
+            <div className="relative w-[240px] h-[240px]">
             {/* Spinning ring */}
             <div
               className="absolute inset-[-4px] rounded-full"
@@ -45,6 +50,8 @@ export default function About() {
               ))}
             </div>
           </div>
+          </div>
+          <CodingScene compact />
         </div>
 
         {/* Content */}
