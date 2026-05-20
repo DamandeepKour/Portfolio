@@ -1,3 +1,5 @@
+import TechHubScene from './motion/TechHubScene';
+
 const stacks = [
   {
     icon: '⚛',
@@ -40,7 +42,11 @@ export default function TechStack() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,300px)_1fr] gap-10 lg:gap-12 items-center mb-4">
+        <div className="flex justify-center lg:justify-end">
+          <TechHubScene />
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {stacks.map((s) => (
           <div
             key={s.title}
@@ -62,6 +68,7 @@ export default function TechStack() {
             </div>
           </div>
         ))}
+        </div>
       </div>
     </section>
   );

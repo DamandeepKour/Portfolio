@@ -99,7 +99,7 @@ export default function Projects() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5">
-          {projects.map((p) => {
+          {projects.map((p, cardIndex) => {
             const CardWrapper = p.live ? 'a' : 'div';
 
             return (
@@ -125,7 +125,10 @@ export default function Projects() {
                     className="h-40 relative flex items-center justify-center"
                     style={{ background: p.bg }}
                   >
-                    <span className="text-5xl opacity-60">
+                    <span
+                      className="project-card-icon text-5xl opacity-60 inline-block"
+                      style={{ animationDelay: `${cardIndex * 0.35}s` }}
+                    >
                       {p.icon}
                     </span>
 

@@ -7,6 +7,47 @@
   aspect-ratio: 1 / 1;
 }
 
+.coding-scene--compact {
+  max-width: 260px;
+}
+
+.coding-scene--stats {
+  max-width: 200px;
+  aspect-ratio: 1 / 1;
+}
+
+.coding-scene--stats .coding-scene__badge {
+  font-size: 9px;
+  padding: 4px 8px;
+}
+
+.coding-scene--stats .motion-symbol {
+  font-size: 12px;
+}
+
+.coding-scene__code-block {
+  font-family: ui-monospace, monospace;
+  font-size: 7px;
+  line-height: 1.55;
+  color: #8888a0;
+}
+
+.coding-scene__code-block .code-kw {
+  color: #d4537e;
+}
+
+.coding-scene__code-block .code-str {
+  color: #ef9f27;
+}
+
+.coding-scene__code-block .code-accent {
+  color: #afa9ec;
+}
+
+.coding-scene__person {
+  animation: scene-float 5s ease-in-out infinite;
+}
+
 .coding-scene__glow {
   position: absolute;
   inset: 10%;

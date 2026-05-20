@@ -1,0 +1,150 @@
+.walk-scene {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(20, 20, 31, 0.9) 0%, rgba(13, 13, 26, 0.95) 100%);
+  border: 1px solid rgba(127, 119, 221, 0.2);
+}
+
+.walk-scene--wide {
+  max-width: 520px;
+  height: 200px;
+}
+
+.walk-scene--wide .walk-scene__walker {
+  animation-name: walk-left-to-right-wide;
+}
+
+@keyframes walk-left-to-right-wide {
+  0% { transform: translateX(-60px); }
+  100% { transform: translateX(480px); }
+}
+
+.walk-scene__floor {
+  position: absolute;
+  bottom: 28px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(93, 202, 165, 0.5), transparent);
+}
+
+.walk-scene__buildings {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 0 12px;
+  opacity: 0.35;
+}
+
+.walk-scene__bld {
+  display: block;
+  background: rgba(127, 119, 221, 0.15);
+  border: 1px solid rgba(127, 119, 221, 0.25);
+  border-radius: 2px 2px 0 0;
+}
+
+.walk-scene__bld--1 { width: 28px; height: 40px; }
+.walk-scene__bld--2 { width: 36px; height: 55px; }
+.walk-scene__bld--3 { width: 24px; height: 32px; }
+
+.walk-scene__walker {
+  position: absolute;
+  bottom: 24px;
+  left: 0;
+  width: 90px;
+  height: 150px;
+  animation: walk-left-to-right 8s linear infinite;
+}
+
+.walk-scene__svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Walk left → right, then loop */
+@keyframes walk-left-to-right {
+  0% {
+    transform: translateX(-50px);
+  }
+  100% {
+    transform: translateX(240px);
+  }
+}
+
+.walk-scene__leg--left {
+  transform-origin: 48px 145px;
+  animation: leg-swing-left 0.6s ease-in-out infinite;
+}
+
+.walk-scene__leg--right {
+  transform-origin: 72px 145px;
+  animation: leg-swing-right 0.6s ease-in-out infinite;
+}
+
+.walk-scene__arm--left {
+  transform-origin: 42px 100px;
+  animation: arm-swing-left 0.6s ease-in-out infinite;
+}
+
+.walk-scene__arm--right {
+  transform-origin: 78px 102px;
+  animation: arm-swing-right 0.6s ease-in-out infinite;
+}
+
+@keyframes leg-swing-left {
+  0%, 100% { transform: rotate(-18deg); }
+  50% { transform: rotate(14deg); }
+}
+
+@keyframes leg-swing-right {
+  0%, 100% { transform: rotate(14deg); }
+  50% { transform: rotate(-18deg); }
+}
+
+@keyframes arm-swing-left {
+  0%, 100% { transform: rotate(12deg); }
+  50% { transform: rotate(-10deg); }
+}
+
+@keyframes arm-swing-right {
+  0%, 100% { transform: rotate(-8deg); }
+  50% { transform: rotate(14deg); }
+}
+
+.walk-scene__label {
+  position: absolute;
+  font-size: 10px;
+  font-family: ui-monospace, monospace;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: rgba(20, 20, 31, 0.9);
+  border: 1px solid rgba(127, 119, 221, 0.3);
+  color: #afa9ec;
+  animation: label-float 3s ease-in-out infinite;
+}
+
+.walk-scene__label--1 {
+  top: 12%;
+  left: 8%;
+}
+
+.walk-scene__label--2 {
+  bottom: 18%;
+  right: 8%;
+  color: #5dcaa5;
+  animation-delay: -1.5s;
+}
+
+@keyframes label-float {
+  0%, 100% { transform: translateY(0); opacity: 0.7; }
+  50% { transform: translateY(-4px); opacity: 1; }
+}

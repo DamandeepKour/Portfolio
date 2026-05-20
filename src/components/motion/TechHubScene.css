@@ -1,0 +1,223 @@
+.tech-hub {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 320 / 280;
+  border-radius: 20px;
+  background: radial-gradient(ellipse at 50% 45%, rgba(127, 119, 221, 0.12) 0%, rgba(8, 8, 16, 0.95) 70%);
+  border: 1px solid rgba(93, 202, 165, 0.15);
+  overflow: hidden;
+}
+
+.tech-hub__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(127, 119, 221, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(127, 119, 221, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.6;
+}
+
+.tech-hub__pulse {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 120px;
+  height: 120px;
+  margin: -60px 0 0 -60px;
+  border-radius: 50%;
+  border: 1px solid rgba(93, 202, 165, 0.25);
+  animation: hub-pulse 3s ease-out infinite;
+}
+
+@keyframes hub-pulse {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+.tech-hub__lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.tech-hub__line {
+  stroke: rgba(127, 119, 221, 0.35);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 8;
+  animation: line-dash 2s linear infinite;
+}
+
+.tech-hub__line--delay { animation-delay: -0.5s; }
+.tech-hub__line--delay2 { animation-delay: -1s; }
+.tech-hub__line--delay3 { animation-delay: -1.5s; }
+
+@keyframes line-dash {
+  to { stroke-dashoffset: -28; }
+}
+
+.tech-hub__core-ring {
+  stroke: rgba(93, 202, 165, 0.4);
+  stroke-width: 1;
+  stroke-dasharray: 4 6;
+  animation: orbit-spin 12s linear infinite;
+  transform-origin: 160px 140px;
+}
+
+@keyframes orbit-spin {
+  to { transform: rotate(360deg); }
+}
+
+.tech-hub__core {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(20, 20, 31, 0.95);
+  border: 2px solid rgba(127, 119, 221, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 24px rgba(127, 119, 221, 0.25);
+  z-index: 2;
+}
+
+.tech-hub__core-icon {
+  font-size: 18px;
+  color: #5dcaa5;
+}
+
+.tech-hub__core-label {
+  font-size: 9px;
+  font-family: ui-monospace, monospace;
+  color: #afa9ec;
+  margin-top: 2px;
+}
+
+.tech-hub__node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  animation: node-float 4s ease-in-out infinite;
+  z-index: 3;
+}
+
+.tech-hub__node-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(20, 20, 31, 0.92);
+  border: 1px solid color-mix(in srgb, var(--node-color) 50%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.tech-hub__node-label {
+  font-size: 9px;
+  font-family: ui-monospace, monospace;
+  color: var(--node-color);
+  white-space: nowrap;
+}
+
+@keyframes node-float {
+  0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+  50% { transform: translate(-50%, -50%) translateY(-6px); }
+}
+
+.tech-hub__chart {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72%;
+  padding: 8px 10px;
+  background: rgba(20, 20, 31, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.tech-hub__chart-title {
+  display: block;
+  font-size: 8px;
+  font-family: ui-monospace, monospace;
+  color: #8888a0;
+  margin-bottom: 6px;
+}
+
+.tech-hub__bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 36px;
+}
+
+.tech-hub__bar {
+  flex: 1;
+  min-height: 4px;
+  background: linear-gradient(180deg, #5dcaa5, #7f77dd);
+  border-radius: 2px 2px 0 0;
+  animation: bar-grow 2s ease-in-out infinite alternate;
+  transform-origin: bottom;
+}
+
+@keyframes bar-grow {
+  0% { transform: scaleY(0.85); opacity: 0.7; }
+  100% { transform: scaleY(1); opacity: 1; }
+}
+
+.tech-hub__flow {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #5dcaa5;
+  box-shadow: 0 0 8px #5dcaa5;
+  opacity: 0;
+}
+
+.tech-hub__flow--1 {
+  animation: flow-orbit 4s linear infinite;
+}
+
+.tech-hub__flow--2 {
+  animation: flow-orbit 4s linear infinite reverse;
+  animation-delay: -2s;
+}
+
+@keyframes flow-orbit {
+  0% {
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+  }
+  10% { opacity: 1; }
+  25% { left: 20%; top: 25%; }
+  50% { left: 80%; top: 20%; opacity: 1; }
+  75% { left: 75%; top: 75%; }
+  90% { opacity: 0; }
+  100% {
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+  }
+}

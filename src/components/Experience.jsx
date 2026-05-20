@@ -1,3 +1,5 @@
+import WalkingBusinessScene from './motion/WalkingBusinessScene';
+
 const jobs = [
   {
     period: 'Oct-2024 — Present',
@@ -26,9 +28,14 @@ export default function Experience() {
           <div className="text-[32px] font-bold">Experience</div>
         </div>
 
-        <div className="relative pl-8 max-w-[700px] mx-auto">
-          <div className="absolute left-[10px] top-0 bottom-0 w-px bg-gradient-to-b from-[#7f77dd] via-[#5dcaa5] to-transparent" />
-          {jobs.map((job, i) => (
+        <div className="mb-10 flex justify-center overflow-hidden px-2 w-full max-w-xl mx-auto">
+          <WalkingBusinessScene wide />
+        </div>
+
+        <div className="grid grid-cols-1 max-w-[700px] mx-auto mb-6">
+          <div className="relative pl-8 min-w-0">
+            <div className="absolute left-[10px] top-0 bottom-0 w-px bg-gradient-to-b from-[#7f77dd] via-[#5dcaa5] to-transparent" />
+            {jobs.map((job, i) => (
             <div key={i} className="relative mb-10">
               <div
                 className="absolute -left-7 top-1 w-3 h-3 rounded-full border-2 border-[#080810]"
@@ -46,7 +53,8 @@ export default function Experience() {
                 ))}
               </div>
             </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
     </div>
