@@ -7,7 +7,6 @@ const particles = [
   { label: 'React', x: '5%', y: '75%', delay: '-2s', color: '#afa9ec' },
 ];
 
-/** Ambient motion-graphic labels for section backgrounds */
 export default function FloatingMotion() {
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">

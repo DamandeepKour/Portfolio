@@ -11,9 +11,6 @@ export default function Footer() {
         >
           Back to top ↑
         </button>
-        {/* <a href="#" className="text-[13px] text-[#8888a0] hover:text-[#f0f0f5] transition-colors no-underline">
-          Download CV
-        </a> */}
       </div>
     </footer>
   );
