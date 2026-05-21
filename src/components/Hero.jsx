@@ -14,7 +14,6 @@ export default function Hero() {
       className="relative min-h-[92vh] flex flex-col lg:flex-row items-center justify-center gap-12 px-6 py-16 max-w-6xl mx-auto"
     >
       <FloatingMotion />
-      {/* Text side */}
       <div className="flex-1 text-center lg:text-left">
         <div className="inline-flex items-center gap-1.5 bg-[rgba(127,119,221,0.12)] border border-[rgba(127,119,221,0.3)] text-[#afa9ec] text-xs px-3.5 py-1 rounded-full mb-6">
           <span className="w-1.5 h-1.5 rounded-full bg-[#5dcaa5] animate-pulse" />

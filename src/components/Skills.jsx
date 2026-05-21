@@ -4,7 +4,6 @@ const skills = [
   { name: 'React / Frontend', pct: 92, fill: 'linear-gradient(90deg, #7f77dd, #afa9ec)' },
   { name: 'Node.js / Backend', pct: 90, fill: 'linear-gradient(90deg, #7f77dd, #afa9ec)' },
   { name: 'MongoDB / Databases', pct: 85, fill: 'linear-gradient(90deg, #5dcaa5, #9fe1cb)' },
-  // { name: 'System Design', pct: 80, fill: 'linear-gradient(90deg, #5dcaa5, #9fe1cb)' },
   { name: 'Docker', pct: 75, fill: 'linear-gradient(90deg, #ef9f27, #fac775)' },
   { name: 'Go (Golang)', pct: 65, fill: 'linear-gradient(90deg, #ef9f27, #fac775)' },
 ];
