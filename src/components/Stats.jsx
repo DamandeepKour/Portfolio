@@ -17,9 +17,9 @@ export default function Stats() {
       className="reveal-on-scroll border-y border-white/[0.07] bg-[#0d0d1a]"
     >
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-8 px-4 py-4 sm:py-2">
-        <div className="flex justify-center sm:flex-shrink-0 sm:w-[160px] sm:py-2">
+        {/* <div className="flex justify-center sm:flex-shrink-0 sm:w-[160px] sm:py-2">
           <CodingScene variant="stats" compact />
-        </div>
+        </div> */}
         <div className="flex flex-1 justify-center min-w-0">
           {stats.map((s, i) => (
             <div
